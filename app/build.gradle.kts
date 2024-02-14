@@ -4,6 +4,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile = file("..\\Key\\dummyApp.jks")
+            storePassword = "Opsera"
+            keyPassword = "Opsera"
+            keyAlias = "KeyAlias"
+        }
+    }
     namespace = "com.example.dummyapp"
     compileSdk = 34
 
@@ -64,3 +72,4 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
+apply("../artifacts.gradle")
